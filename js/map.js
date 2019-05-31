@@ -21,7 +21,7 @@ info.onAdd = function (map) {
 
 info.update = function (props) {
   this._div.innerHTML = '<h4>US States Data</h4>' + (props ?
-    'zhvi estimation<br />$' + props.zhvi + '<br />' +
+    'Zillow Home Value Index<br />$' + props.zhvi + '<br />' +
     'zhvi created Date: ' + props.date
     : 'Hover over a state');
 };
