@@ -20,24 +20,25 @@ info.onAdd = function (map) {
 };
 
 info.update = function (props) {
-  this._div.innerHTML = '<h4>US States Zhvi</h4>' + (props ?
-    '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup><br />$' + props.zhvi + ' zhvi estimation'
+  this._div.innerHTML = '<h4>US States Data</h4>' + (props ?
+    'zhvi estimation<br />$' + props.zhvi + '<br />' +
+    'zhvi created Date: ' + props.date
     : 'Hover over a state');
 };
 
 info.addTo(map);
 
 
-// get color depending on population density value
-function getColor(d) {
-  return d > 1000 ? '#800026' :
-    d > 500 ? '#BD0026' :
-      d > 200 ? '#E31A1C' :
-        d > 100 ? '#FC4E2A' :
-          d > 50 ? '#FD8D3C' :
-            d > 20 ? '#FEB24C' :
-              d > 10 ? '#FED976' :
-                '#FFEDA0';
+
+function getColorZhvi(d) {
+  return d > 400000 ? '#17282F' :
+    d > 350000 ? '#2E4953' :
+      d > 300000 ? '#4D6E7A' :
+        d > 250000 ? '#6C919F' :
+          d > 200000 ? '#8CADB9' :
+            d > 150000 ? '#AFC7D0' :
+              d > 100000 ? '#DAE9EF' :
+                '#ccddff';
 }
 
 function style(feature) {
@@ -47,7 +48,7 @@ function style(feature) {
     color: 'white',
     dashArray: '3',
     fillOpacity: 0.7,
-    fillColor: getColor(feature.properties.density)
+    fillColor: getColorZhvi(feature.properties.zhvi)
   };
 }
 
@@ -100,18 +101,21 @@ var legend = L.control({ position: 'bottomright' });
 legend.onAdd = function (map) {
 
   var div = L.DomUtil.create('div', 'info legend'),
-    grades = [0, 10, 20, 50, 100, 200, 500, 1000],
+    gradesZhvi = [100000, 150000, 200000, 250000, 300000, 350000, 400000],
     labels = [],
     from, to;
 
-  for (var i = 0; i < grades.length; i++) {
-    from = grades[i];
-    to = grades[i + 1];
+  // for Zhvi
+  for (var i = 0; i < gradesZhvi.length; i++) {
+    from = gradesZhvi[i];
+    to = gradesZhvi[i + 1];
 
     labels.push(
-      '<i style="background:' + getColor(from + 1) + '"></i> ' +
+      '<i style="background:' + getColorZhvi(from + 1) + '"></i> ' +
       from + (to ? '&ndash;' + to : '+'));
   }
+  labels.push('<i><b>zhvi</b></i>');
+
 
   div.innerHTML = labels.join('<br>');
   return div;
