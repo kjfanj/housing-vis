@@ -20,7 +20,7 @@ info.onAdd = function (map) {
 };
 
 info.update = function (props) {
-  this._div.innerHTML = '<h4>US Population Density</h4>' + (props ?
+  this._div.innerHTML = '<h4>US States Zhvi</h4>' + (props ?
     '<b>' + props.name + '</b><br />' + props.density + ' people / mi<sup>2</sup>'
     : 'Hover over a state');
 };
@@ -92,7 +92,7 @@ geojson = L.geoJson(statesData, {
   onEachFeature: onEachFeature
 }).addTo(map);
 
-map.attributionControl.addAttribution('Population data &copy; <a href="http://census.gov/">US Census Bureau</a>');
+map.attributionControl.addAttribution('Zillow Housing data &copy; <a href="https://www.zillow.com/research/data/">Zillow</a>');
 
 
 var legend = L.control({ position: 'bottomright' });

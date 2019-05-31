@@ -5,10 +5,14 @@ body {
   margin: 0;
 }
 
+#map {
+  width: 100vw;
+  height: 100vh;
+}
 
 #map {
-  width: 800px;
-  height: 500px;
+  width: 100vw;
+  height: 100vh;
 }
 
 .info {
