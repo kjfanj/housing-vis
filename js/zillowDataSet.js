@@ -1,4 +1,5 @@
 var zillowData = {
+  "data":
   [
     {
       "RegionName": "New York",

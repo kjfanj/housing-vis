@@ -1,4 +1,3 @@
-
 var stateAbvMapping = {
   "AL": "Alabama",
   "AK": "Alaska",

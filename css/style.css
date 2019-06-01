@@ -25,7 +25,7 @@ body {
 }
 
 .info h4 {
-  margin: 0 0 5px;
+  margin: 0 0 1vmin;
   color: #777;
 }
 
@@ -39,6 +39,6 @@ body {
   width: 18px;
   height: 18px;
   float: left;
-  margin-right: 8px;
+  margin-right: 1vw;
   opacity: 0.7;
 }
