@@ -8,7 +8,3 @@ for (let i = 0, n = statesData.features.length; i < n; i++) {
     }
   }
 }
-
-
-
-
