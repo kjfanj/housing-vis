@@ -22,7 +22,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
   this._div.innerHTML = '<h4>US States Data</h4>' + (props ?
     props.name + '<br />' +
-    'Zillow Home Value Index<br />$' + props.meanZhvi + '<br />' +
+    'Zillow Home Value Index<br />$' + props.zillowZhvi + '<br />' +
     'zhvi created Date: 4/30/2019'
     : 'Hover over a state');
 };
@@ -49,7 +49,7 @@ function style(feature) {
     color: 'white',
     dashArray: '3',
     fillOpacity: 0.7,
-    fillColor: getColorZhvi(feature.properties.zhvi)
+    fillColor: getColorZhvi(feature.properties.zillowZhvi)
   };
 }
 
