@@ -10,6 +10,7 @@ body {
   width: 90vw;
   height: 50vh;
   margin: 0 auto;
+  margin-top: 5vh;
 }
 
 #data-presentation-container {
