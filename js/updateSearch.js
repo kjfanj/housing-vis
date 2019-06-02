@@ -34,14 +34,15 @@ const filterInfo = (stateInfo, inputLetters) => {
   let matchedData = [];
   let lowerCasedInput = inputLetters.toLowerCase();
   for (let i = 0, n = stateInfo.features.length; i < n; i++) {
-    stateInfo.features[i].properties.zillowData.forEach(region => {
-      if (region.RegionName.toLowerCase().includes(lowerCasedInput)) {
-        matchedData.push(region)
+    let zillowData = stateInfo.features[i].properties.zillowData;
+    for (let j = 0, m = zillowData.length; j < m; j++) {
+      if (zillowData[j].RegionName.toLowerCase().includes(lowerCasedInput)) {
+        matchedData.push(zillowData[j])
+        break;
       }
-    })
-
+    }
   }
-  return matchedData
+  return matchedData;
 }
 
 var numberWithCommas = (x) => {
