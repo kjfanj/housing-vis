@@ -41,7 +41,7 @@ body {
 }
 
 #item-info-container {
-  max-height:3vw;
+  /* height: 2px; */
   margin-left: 1vw;
 }
 
