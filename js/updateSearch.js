@@ -38,11 +38,12 @@ const filterInfo = (stateInfo, inputLetters) => {
     for (let j = 0, m = zillowData.length; j < m; j++) {
       if (zillowData[j].RegionName.toLowerCase().includes(lowerCasedInput)) {
         matchedData.push(zillowData[j])
-        break;
       }
     }
   }
-  return matchedData;
+  return matchedData.sort(function (a, b) {
+    return b.Zhvi - a.Zhvi;
+  });
 }
 
 var numberWithCommas = (x) => {
