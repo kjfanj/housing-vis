@@ -16,7 +16,7 @@ inputHolder.addEventListener("keyup", (e) => {
           <b>${matchedData[i].FullStateName}</b>
           <span>, ${matchedData[i].RegionName}</span>
           <span>, ${matchedData[i].County}</span>
-          <span>, $${matchedData[i].Zhvi}</span>
+          <span>, $${numberWithCommas(matchedData[i].Zhvi)}</span>
         <p>
       </div>
       `;
@@ -42,4 +42,8 @@ const filterInfo = (stateInfo, inputLetters) => {
 
   }
   return matchedData
+}
+
+var numberWithCommas = (x) => {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }

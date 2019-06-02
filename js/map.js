@@ -22,7 +22,7 @@ info.onAdd = function (map) {
 info.update = function (props) {
   this._div.innerHTML = '<h4>US States Data</h4>' + (props ?
     props.name + '<br />' +
-    'Zillow Home Value Index<br />$' + props.zillowZhvi + '<br />' +
+    'Zillow Home Value Index<br />$' + numberWithCommas(props.zillowZhvi) + '<br />' +
     'zhvi created Date: 4/30/2019'
     : 'Hover over a state');
 };
