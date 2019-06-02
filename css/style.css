@@ -3,6 +3,7 @@ html,
 body {
   height: 100%;
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 #map {
@@ -35,11 +36,12 @@ body {
   background-color: #DCDCDC;
   flex-direction: column;
   flex-wrap: wrap;
-  text-align: center;
+  /* text-align: center; */
 }
 
 #item-info-container {
   max-height:3vw;
+  margin-left: 1vw;
 }
 
 
