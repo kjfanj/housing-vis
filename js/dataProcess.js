@@ -31,6 +31,7 @@ for (let i = 0, n = statesData.features.length; i < n; i++) {
 for (let i = 0, n = statesData.features.length; i < n; i++) {
   const stateFeatures = statesData.features[i];
   for (let j = 0, m = zillowStateZhvi.data.length; j < m; j++) {
+    // make sure state name matches
     if (stateFeatures.properties["name"] === zillowStateZhvi.data[j]["RegionName"]) {
       stateFeatures.properties["zillowZhvi"] = zillowStateZhvi.data[j]["Zhvi"]
       break;
