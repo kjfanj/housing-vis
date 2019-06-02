@@ -31,13 +31,11 @@ body {
 
 #data-presentation{
   width: 90vw;
-  min-height: 40vh;
   display:flex;
   margin-top: 1vh;
   background-color: #DCDCDC;
   flex-direction: column;
   flex-wrap: wrap;
-  /* text-align: center; */
 }
 
 #item-info-container {
