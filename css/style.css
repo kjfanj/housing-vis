@@ -33,13 +33,13 @@ body {
   display:flex;
   margin-top: 1vh;
   background-color: #DCDCDC;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
   text-align: center;
 }
 
 #item-info-container {
-  width:15vw;
+  max-height:3vw;
 }
 
 

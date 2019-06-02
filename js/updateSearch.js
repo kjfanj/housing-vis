@@ -12,10 +12,12 @@ inputHolder.addEventListener("keyup", (e) => {
 
       for (let i = 0; i < matchedData.length; i++) {
         const itemInfoElem = `<div id="item-info-container">
-      <h3 id=f"state-name">${matchedData[i].FullStateName}</h3>
-      <p id="city-name">${matchedData[i].RegionName}</p>
-      <p id="city-name">${matchedData[i].County}</p>
-      <p id="zhvi-value">$ ${matchedData[i].Zhvi}</p>
+        <p>
+          <b>${matchedData[i].FullStateName}</b>
+          <span>, ${matchedData[i].RegionName}</span>
+          <span>, ${matchedData[i].County}</span>
+          <span>, $${matchedData[i].Zhvi}</span>
+        <p>
       </div>
       `;
         dataToBeAppended.push(itemInfoElem)
